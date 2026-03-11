@@ -34,7 +34,7 @@ function updateTime() {
 
 function updateGreeting() {
     const hour = new Date().getHours();
-    const userName = localStorage.getItem('userName') || 'Friend';
+    const userName = localStorage.getItem('userName') || 'Hasna';
     let greetingText = '';
     if (hour < 12) {
         greetingText = 'Good Morning';
@@ -45,14 +45,6 @@ function updateGreeting() {
     }
     greeting.textContent = `${greetingText}, ${userName}!`;
 }
-
-nameBtn.addEventListener('click', () => {
-    const name = prompt('What\'s your name?');
-    if (name && name.trim()) {
-        localStorage.setItem('userName', name.trim());
-        updateGreeting();
-    }
-});
 
 // ===== FOCUS TIMER =====
 const timerDisplay = document.getElementById('timerDisplay');
